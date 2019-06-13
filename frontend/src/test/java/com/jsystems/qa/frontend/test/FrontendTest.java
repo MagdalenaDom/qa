@@ -4,22 +4,18 @@ import com.jsystems.qa.frontend.Configuration;
 import com.jsystems.qa.frontend.page.LoginPage;
 import com.jsystems.qa.frontend.page.MainWordpressPage;
 import com.jsystems.qa.frontend.page.UserPage;
-import org.junit.Test;
-import org.openqa.selenium.By;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 
-import javax.swing.*;
-import java.security.Key;
 import java.util.concurrent.TimeUnit;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class FrontendTest {
+public class FrontendTest extends Configfrontend {
     MainWordpressPage wordpressPage;
     LoginPage loginPage;
     UserPage userPage;
@@ -35,14 +31,14 @@ public class FrontendTest {
 
 //        System.setProperty("webdriver.chrome.driver", ClassLoader.getSystemClassLoader().getResource("driver/chromedriver.exe").getFile());
 //        System.setProperty("webdriver.gecko.driver", ClassLoader.getSystemClassLoader().getResource("driver/geckodriver.exe").getFile());
-        System.setProperty("webdriver.gecko.driver", "D:/geckodriver.exe");
-        WebDriver driver = new FirefoxDriver();
-        driver.manage().window().maximize();
-        driver.manage().deleteAllCookies();
-        driver.manage().timeouts().pageLoadTimeout(120, TimeUnit.SECONDS);
-
-//        driver.get("https://wordpress.com/");
-        driver.get(Configuration.BASE_URL);
+//        System.setProperty("webdriver.gecko.driver", "D:/geckodriver.exe");
+//        WebDriver driver = new FirefoxDriver();
+//        driver.manage().window().maximize();
+//        driver.manage().deleteAllCookies();
+//        driver.manage().timeouts().pageLoadTimeout(120, TimeUnit.SECONDS);
+//
+////        driver.get("https://wordpress.com/");
+//        driver.get(Configuration.BASE_URL);
 
         wordpressPage = new MainWordpressPage(driver);
         assertTrue(wordpressPage.buildWebsite.isDisplayed());
@@ -70,17 +66,17 @@ public class FrontendTest {
 //        assertEquals(login.getText(), "Log In");
 //        login.click();
 
-        driver.quit();
+//        driver.quit();
     }
 
     @Test
     public void loginTest(){
-        System.setProperty("webdriver.gecko.driver", "D:/geckodriver.exe");
-        WebDriver driver = new FirefoxDriver();
-        driver.manage().window().maximize();
-        driver.manage().deleteAllCookies();
-        driver.manage().timeouts().pageLoadTimeout(120, TimeUnit.SECONDS);
-        driver.get(Configuration.BASE_URL);
+//        System.setProperty("webdriver.gecko.driver", "D:/geckodriver.exe");
+//        WebDriver driver = new FirefoxDriver();
+//        driver.manage().window().maximize();
+//        driver.manage().deleteAllCookies();
+//        driver.manage().timeouts().pageLoadTimeout(120, TimeUnit.SECONDS);
+//        driver.get(Configuration.BASE_URL);
 
         wordpressPage = new MainWordpressPage(driver);
         wordpressPage.waitForVisibilityOfElement(wordpressPage.login, 30);
@@ -100,12 +96,18 @@ public class FrontendTest {
         userPage.waitForVisibilityOfElement(userPage.userAvatar, 30);
         assertTrue(userPage.userAvatar.isDisplayed());
 
-        driver.quit();
+//        driver.quit();
     }
 
     @Test
-    public void loginActionTest{
-
+    public void loginActionTest(){
+//        System.setProperty("webdriver.gecko.driver", "D:/geckodriver.exe");
+//        WebDriver driver = new FirefoxDriver();
+//        driver.manage().window().maximize();
+//        driver.manage().deleteAllCookies();
+//        driver.manage().timeouts().pageLoadTimeout(120, TimeUnit.SECONDS);
+//        driver.get(Configuration.BASE_URL);
+//
         wordpressPage = new MainWordpressPage(driver);
         wordpressPage.waitForVisibilityOfElement(wordpressPage.login, 30);
         wordpressPage.login.click();
@@ -116,11 +118,11 @@ public class FrontendTest {
         action
                 .moveToElement(loginPage.emailInput)
                 .sendKeys(Configuration.LOGIN)
-                .sendKeys(Key.chord(Keys.ENTER))
+                .sendKeys(Keys.chord(Keys.ENTER))
                 .build()
                 .perform();
 
-        loginPage.waitForVisibilityOfElement(loginPage.passwordInput, 30);
+        loginPage.waitForVisibilityOfElement(loginPage.password, 30);
         assertTrue(loginPage.buttonContinue.getText().equals("Log In"));
     }
 
