@@ -1,6 +1,7 @@
 package com.jsystems.qa.frontend.test;
 
 import com.jsystems.qa.frontend.Configuration;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -16,24 +17,21 @@ public class Configfrontend {
 
     @BeforeAll
     public static void setUpAll(){
-        System.out.println("========================================");
+        System.out.println("Before All ========================================");
 
-//        WebDriverManager.chromedriver().setup();
+        WebDriverManager.chromedriver().setup();
 //        System.setProperty("webdriver.gecko.driver", ClassLoader.getSystemClassLoader().getResource("driver/geckodriver.exe").getFile());
-        System.setProperty("webdriver.chrome.driver", ClassLoader.getSystemClassLoader().getResource("driver/chromedriver.exe").getFile());
+//        System.setProperty("webdriver.chrome.driver", ClassLoader.getSystemClassLoader().getResource("driver/chromedriver.exe").getFile());
     }
 
     @BeforeEach
     public void setUpEach(){
-//        System.setProperty("webdriver.chrome.driver", ClassLoader.getSystemClassLoader().getResource("driver/chromedriver.exe").getFile());
+        System.out.println("Before Eaqch ========================================");
 
         String browser = Configuration.getBROWSER();
-        System.out.println(browser);
         if (browser.equals("chrome")){
 
-        System.out.println(browser);
             driver = new ChromeDriver();
-        System.out.println(driver);
         } else if (browser.equals("firefox")) {
             driver = new FirefoxDriver();
         }
