@@ -1,16 +1,12 @@
-package com.jsystems.qa.frontend.test;
+package com.jsystems.qa.frontend.classicfolder.test;
 
 import com.jsystems.qa.frontend.Configuration;
-import com.jsystems.qa.frontend.page.LoginPage;
-import com.jsystems.qa.frontend.page.MainWordpressPage;
-import com.jsystems.qa.frontend.page.UserPage;
+import com.jsystems.qa.frontend.classicfolder.page.LoginPage;
+import com.jsystems.qa.frontend.classicfolder.page.MainWordpressPage;
+import com.jsystems.qa.frontend.classicfolder.page.UserPage;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
-
-import java.util.concurrent.TimeUnit;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;

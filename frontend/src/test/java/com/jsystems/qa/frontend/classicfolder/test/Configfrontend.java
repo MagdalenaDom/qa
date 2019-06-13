@@ -1,4 +1,4 @@
-package com.jsystems.qa.frontend.test;
+package com.jsystems.qa.frontend.classicfolder.test;
 
 import com.jsystems.qa.frontend.Configuration;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -20,8 +20,8 @@ public class Configfrontend {
         System.out.println("Before All ========================================");
 
         WebDriverManager.chromedriver().setup();
-//        System.setProperty("webdriver.gecko.driver", ClassLoader.getSystemClassLoader().getResource("driver/geckodriver.exe").getFile());
-//        System.setProperty("webdriver.chrome.driver", ClassLoader.getSystemClassLoader().getResource("driver/chromedriver.exe").getFile());
+        System.setProperty("webdriver.gecko.driver", ClassLoader.getSystemClassLoader().getResource("driver/geckodriver.exe").getFile());
+        System.setProperty("webdriver.chrome.driver", ClassLoader.getSystemClassLoader().getResource("driver/chromedriver.exe").getFile());
     }
 
     @BeforeEach
