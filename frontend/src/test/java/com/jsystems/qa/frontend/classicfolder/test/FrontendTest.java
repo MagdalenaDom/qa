@@ -104,6 +104,7 @@ public class FrontendTest extends Configfrontend {
 //        driver.manage().timeouts().pageLoadTimeout(120, TimeUnit.SECONDS);
 //        driver.get(Configuration.BASE_URL);
 //
+
         wordpressPage = new MainWordpressPage(driver);
         wordpressPage.waitForVisibilityOfElement(wordpressPage.login, 30);
         wordpressPage.login.click();

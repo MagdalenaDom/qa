@@ -9,11 +9,25 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import java.net.URISyntaxException;
+import java.nio.file.Paths;
 import java.util.concurrent.TimeUnit;
 
 public class Configfrontend {
 
     WebDriver driver;
+
+    String chromePath;
+    String fireFoxPath;
+
+    {
+        try {
+            chromePath = Paths.get(getClass().getClassLoader().getResource("driver/chromedriver.exe").toURI()).toFile().getAbsolutePath();
+            fireFoxPath = Paths.get(getClass().getClassLoader().getResource("driver/geckodriver.exe").toURI()).toFile().getAbsolutePath();
+        } catch (URISyntaxException e) {
+            e.printStackTrace();
+        }
+    }
 
     @BeforeAll
     public static void setUpAll(){

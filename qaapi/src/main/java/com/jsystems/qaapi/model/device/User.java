@@ -1,4 +1,4 @@
-package com.jsystems.qaapi;
+package com.jsystems.qaapi.model.device;
 
 import java.util.List;
 

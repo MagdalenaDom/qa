@@ -79,6 +79,11 @@
             <artifactId>cucumber-picocontainer</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>com.jsystems</groupId>
+            <artifactId>qaapi</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
 
 
     </dependencies>
